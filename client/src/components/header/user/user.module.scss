@@ -1,0 +1,54 @@
+.faUser {
+  padding: 5px;
+  background: #FFFFFF;
+  font-size: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.userBlock {
+  position: relative;
+  height: 30px;
+  text-align: end;
+
+  .userInfoAndLogoutBlock {
+    padding: 10px;
+    margin: auto 0 auto auto;
+    min-width: 230px;
+    width: 100%;
+    position: absolute;
+    right: 0;
+    background: #2D2D2D;
+    color: #FFFFFF;
+    text-align: start;
+    z-index: 100;
+
+    .userMainInfo {
+      padding-bottom: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-bottom: 1px solid #FFFFFF;
+
+      span {
+        opacity: 0.5;
+      }
+    }
+
+    .logout {
+      padding-top: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+
+      svg > path {
+        stroke: #FFFFFF;
+      }
+    }
+
+    @media screen and (max-width: 992px) {
+      max-width: 230px;
+    }
+  }
+}

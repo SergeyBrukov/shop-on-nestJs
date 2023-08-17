@@ -1,0 +1,16 @@
+.locationBlock {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.city {
+  font-size: 16px;
+  text-decoration: underline;
+}
+
+.faLocationArrow {
+  font-size: 10px;
+}

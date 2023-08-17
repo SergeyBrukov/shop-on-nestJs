@@ -1,0 +1,20 @@
+.navigationBlock {
+  max-width: 635px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media screen and (max-width: 992px) {
+    display: none;
+  }
+}
+
+.link {
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.activeLink {
+  color: #FFC540;
+}

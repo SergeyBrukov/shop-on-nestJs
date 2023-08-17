@@ -1,0 +1,68 @@
+.loginWrapper {
+  height: 100vh;
+  background: var(--background);
+  color: var(--color);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  align-items: center;
+}
+
+.loginFormBlock {
+  padding: 0 15px;
+  height: 100%;
+  text-align: center;
+  box-shadow: 20px 0 11px 0 rgba(248, 245, 245, 0.5);
+
+  h3 {
+    margin-bottom: 30px;
+    font-size: 30px;
+  }
+
+  .loginForm {
+    margin: 0 auto;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+
+    .googleBtn {
+      margin: 0 auto;
+    }
+
+    button {
+      margin-top: 75px;
+    }
+  }
+}
+
+.registerBlock {
+  padding: 0 15px;
+  margin: 0 auto;
+  height: 100%;
+
+  h3 {
+    font-size: 30px;
+  }
+
+  .infoBlock {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    button {
+      margin-top: 25px;
+    }
+  }
+}
+
+.toggleTheme {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}

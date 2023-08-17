@@ -1,0 +1,11 @@
+body[class="light"] {
+  --background: #e8e8e8;
+  --color: #646262;
+  --inputBg: #FFFFFF;
+}
+
+body[class="dark"] {
+  --background: #2D2D2D;
+  --color: #FAFBFC;
+  --inputBg: #e8e8e8;
+}

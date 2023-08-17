@@ -1,0 +1,57 @@
+.navHeaderBlock {
+  padding: 15px 0;
+  background: #2D2D2D;
+  width: 100%;
+}
+
+.subHeaderWrapper {
+  padding: 16px 0;
+  margin-bottom: 24px;
+  background: #FFFFFF;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10);
+
+  .logo {
+    svg {
+      font-size: 40px;
+    }
+  }
+
+  .searchInput {
+
+  }
+
+  .basket {
+    svg {
+      font-size: 30px;
+    }
+  }
+}
+
+.subHeaderContainer {
+  display: grid;
+  grid-template-columns: 40px 1fr 75px 80px 30px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.mainBlock {
+  display: grid;
+  grid-template-columns: 100px 630px 30px;
+  align-items: center;
+  justify-content: space-between;
+
+  .burgerMenuIcon {
+    color: #FFFFFF;
+    font-size: 30px;
+    cursor: pointer;
+    @media screen and (min-width: 992px) {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    grid-template-columns: max-content repeat(2, 1fr);
+    gap: 15px;
+  }
+}
