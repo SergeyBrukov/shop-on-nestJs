@@ -4,11 +4,13 @@ import {AuthController} from "./auth.controller";
 import {UserModule} from "../user/user.module";
 import {TokenModule} from "../token/token.module";
 import {GoogleStrategy} from "../strategy/google.strategy";
+import {BasketModule} from "../basket/basket.module";
 
 @Module({
   imports: [
     UserModule,
-    TokenModule
+    TokenModule,
+    BasketModule
   ],
   providers: [AuthService, GoogleStrategy],
   controllers: [AuthController]

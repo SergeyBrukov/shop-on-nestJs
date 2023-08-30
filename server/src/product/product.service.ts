@@ -3,7 +3,7 @@ import {CreateProductDto} from "./dto/create-product.dto";
 import {UpdateProductDto} from "./dto/update-product.dto";
 import {PrismaService} from "../prisma/prisma.service";
 import {FilesService} from "../files/files.service";
-import {PRODUCT_EXIST} from "../common/errors";
+import {PRODUCT_EXIST, PRODUCT_NOT_EXIST} from "../common/errors";
 
 @Injectable()
 export class ProductService {
@@ -16,7 +16,7 @@ export class ProductService {
 
   public async createProduct(createProductDto: CreateProductDto, images: Express.Multer.File[]) {
 
-    const {articul, new: productNew, name, categories, bestseller, producerId, price} = createProductDto;
+    const {articul, new: productNew, name, category, bestseller, producerId, price} = createProductDto;
 
     const candidateProduct = await this.examinationProductUnique({
       name,
@@ -63,13 +63,16 @@ export class ProductService {
             filePath: image.filePath
           }))
         },
-        categories: Number(categories)
+        category: {
+          connect: {
+            id: Number(category)
+          }
+        }
       },
       include: {
         image: true
       }
     });
-    console.log(product, productImages);
 
     return {product};
   }
@@ -82,8 +85,15 @@ export class ProductService {
     });
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} product`;
+  async findOneProduct(id: number) {
+    const product = this.examinationExistProductById(id);
+
+    if (!product) {
+      throw new BadRequestException(PRODUCT_NOT_EXIST);
+    }
+
+    return product;
+
   }
 
   update(id: number, updateProductDto: UpdateProductDto) {
@@ -108,6 +118,24 @@ export class ProductService {
     });
 
     return examinationName || examinationArticul;
+  }
 
+  private examinationExistProductById(id: number) {
+    return this.prismaService.product.findUnique({
+      where: {
+        id
+      },
+      select: {
+        id: true,
+        name: true,
+        articul: true,
+        bestseller: true,
+        new: true,
+        price: true,
+        producer: true,
+        category: true,
+        image: true
+      }
+    });
   }
 }

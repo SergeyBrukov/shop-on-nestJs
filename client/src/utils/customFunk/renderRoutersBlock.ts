@@ -1,7 +1,9 @@
 import {RouterInterface} from "../interface/routerInterface";
 
 const userRouters: RouterInterface[] = [
-  {path: "/:lng?", element: "HomePage"}
+  {path: "/:lng?", element: "HomePage"},
+  {path: "/:lng?/product/:id", element: "ProductItemDetailPage"},
+  {path: "/:lng?/basket", element: "BasketPage"}
 ];
 
 const guestRouters: RouterInterface[] = [

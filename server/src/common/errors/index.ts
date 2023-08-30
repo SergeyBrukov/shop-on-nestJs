@@ -15,6 +15,10 @@ const CATEGORY_NOT_EXIST = "Category not exist";
 const PRODUCT_EXIST = "Product by articul or name already exist"
 const PRODUCT_NOT_EXIST = "Product not exist"
 
+/*BASKET*/
+const BASKET_PRODUCT_EXIST = "Product already exist in to basket";
+const BASKET_PRODUCT_REMOVED = "Product already removed from basket";
+
 export {
   USER_EXIST,
   INVALID_DATA,
@@ -24,5 +28,7 @@ export {
   CATEGORY_EXIST,
   CATEGORY_NOT_EXIST,
   PRODUCT_EXIST,
-  PRODUCT_NOT_EXIST
+  PRODUCT_NOT_EXIST,
+  BASKET_PRODUCT_EXIST,
+  BASKET_PRODUCT_REMOVED
 };

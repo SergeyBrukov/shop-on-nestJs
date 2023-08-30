@@ -4,12 +4,14 @@ import {TokenService} from "../token/token.service";
 import {CreateUserDto} from "../user/dto/create-user.dto";
 import {ResponseAuthUserDto} from "./dto/response-auth-user.dto";
 import {LoginUserDto} from "../user/dto/login-user.dto";
+import {BasketService} from "../basket/basket.service";
 
 @Injectable()
 export class AuthService {
   constructor(
     private readonly userService: UserService,
-    private readonly tokenService: TokenService
+    private readonly tokenService: TokenService,
+    private readonly basketService: BasketService
   ) {
   }
 
@@ -44,7 +46,9 @@ export class AuthService {
     };
   }
 
-  public profile(user: ResponseAuthUserDto) {
-    return {user};
+  public async profile(user: ResponseAuthUserDto) {
+    const basket = await this.basketService.findOne(user.basket.id);
+
+    return {user: {...user, basket}};
   }
 }

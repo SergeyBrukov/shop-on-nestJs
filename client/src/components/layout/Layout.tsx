@@ -31,6 +31,10 @@ const Layout = () => {
 
     const newPath = actualLng.current === defaultLang ? pathname.replace(regex, "/") : `/${actualLng.current}${pathname}`;
 
+    if (pathname.includes(actualLng.current)) {
+      return;
+    }
+
     window.history.replaceState({}, "", newPath);
 
   }, [pathWithoutId]);

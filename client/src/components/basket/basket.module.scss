@@ -1,0 +1,161 @@
+.basketWrapper {
+  //margin: 0 15px;
+}
+
+.basketContainer {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 430px;
+  column-gap: 10px;
+  grid-template-areas: 'title title' 'top-basket-block order-title' 'basket-product-block order-main-block';
+}
+
+.title {
+  margin: 60px 0 44px;
+  grid-area: title;
+}
+
+.topBasketBlock {
+  display: flex;
+  padding: 24px;
+  justify-content: space-between;
+  align-items: center;
+  background: #FFF;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10);
+  grid-area: top-basket-block;
+
+  .topBasketBlockTitle {
+    position: relative;
+    display: flex;
+    gap: 35px;
+
+    .basketIcon {
+      position: relative;
+      left: 5px;
+      top: 5px;
+      font-size: 22px;
+      color: #1C629E;
+    }
+
+    &:before {
+      content: "";
+      width: 32px;
+      height: 32px;
+      position: absolute;
+      background: #DEF0FF;
+      transform: rotate(-45deg);
+    }
+
+    h3 {
+      font-size: 24px;
+      color: #205684;
+    }
+  }
+
+  .topBasketBlockEdit {
+    display: flex;
+    gap: 16px;
+    color: #E0595D;
+    cursor: pointer;
+  }
+}
+
+.basketProductsBlock {
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  background: #FFF;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10);
+  grid-area: basket-product-block;
+
+  .basketProductsTotalAmountBlock {
+    margin: 24px 0 48px;
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      color: #2D2D2D;
+    }
+
+    h3 {
+      color: #205684;
+    }
+
+  }
+
+  .basketProductsContinue {
+    text-align: right;
+
+    button {
+      padding: 10px 32px;
+      color: #FFFFFF;
+      border-radius: 4px;
+      background: #1C629E;
+      transition: all .3s;
+
+      &:active {
+        scale: 0.9;
+      }
+    }
+  }
+}
+
+.orderTitleBlock {
+  padding: 24px;
+  height: 70px;
+  background: #FFF;
+  color: #205684;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10);
+  grid-area: order-title;
+}
+
+.orderMainBlock {
+  padding: 24px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  font-size: 18px;
+  background: #FFF;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10);
+  grid-area: order-main-block;
+
+  h3 {
+    font-size: 24px;
+  }
+
+  .orderMainInfo {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .countAndPriceTotal {
+    display: flex;
+    justify-content: space-between;
+    color: #7B7B7B;
+  }
+
+  .forTheAmount {
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      color: #7B7B7B;
+    }
+  }
+
+  button {
+    padding: 10px 32px;
+    position: relative;
+    border-radius: 4px;
+    background: #FFCF62;
+    border: none;
+    transition: all .3s;
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+}

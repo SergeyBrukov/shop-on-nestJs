@@ -1,4 +1,4 @@
-import * as yup from "yup";
+ import * as yup from "yup";
 import {yupResolver} from "@hookform/resolvers/yup";
 import styles from "./login.module.scss";
 import {SubmitHandler, useForm} from "react-hook-form";

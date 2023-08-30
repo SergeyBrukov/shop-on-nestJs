@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6e8fd99a-f359-4e68-af4a-1945d82eee4f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/client/public/locales/en/home.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/locales/ua/home.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/basket/Basket.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/basket/BasketProductItem.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/basket/basket.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/basket/basketProductItem.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/home/bestsellers/Bestsellers.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/home/bestsellers/BestsellersItem.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/home/bestsellers/BestsellersList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/home/bestsellers/bestsellers.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/product/ProductDetails.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/product/productDetails.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/features/basket/basketSlice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/features/orders/ordersSlice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/features/products/productItemSlice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/features/products/productsSlice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/BasketPage.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/ProductItemDetailPage.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/utils/interface/basketDetailsInterface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/utils/interface/productInterface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/utils/type/basketType.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/utils/type/categoryType.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/utils/type/imageType.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/utils/type/productType.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/header/header.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/header/header.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/header/userLocation/UserLocation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/header/userLocation/UserLocation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/home/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/layout/Layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/layout/Layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/login/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/features/user/userSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/features/user/userSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/utils/customFunk/renderRoutersBlock.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/customFunk/renderRoutersBlock.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/utils/type/producerType.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/type/producerType.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/utils/type/userType.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/type/userType.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/prisma/migrations/20230805215332_init/migration.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/prisma/migrations/20230809211718_add_model_producer_and_files/migration.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/prisma/migrations/20230812114052_change_relation_beatween_producer_and_files/migration.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/prisma/migrations/20230812114327_add_field_name_by_producer/migration.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/prisma/migrations/20230812194827_add_model_product_category/migration.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/prisma/migrations/20230812214343_update/migration.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/prisma/migrations/20230813202054_change_relation_with_product_and_category/migration.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/prisma/migrations/20230814192302_add_new_field_in_product_model/migration.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/prisma/migrations/20230814205742_change_name_field_file_on_name/migration.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/prisma/migrations/migration_lock.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/server/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/auth/auth.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/auth.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/auth/dto/response-auth-user.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/auth/dto/response-auth-user.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/common/errors/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/common/errors/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/files/files.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/files/files.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/producer/producer.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/producer/producer.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/producer/producer.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/producer/producer.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/product/dto/create-product.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/dto/create-product.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/product/product.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/product.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/product/product.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/product/product.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/strategy/jwt.strategy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/strategy/jwt.strategy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/token/token.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/token/token.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/user/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/user/user.service.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/bin/php" />
+  <component name="ProjectId" id="2TI3kvYtCCBakWPk0BqcPperfFK" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/sergey/work/write-to-me&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.eslint&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/media/sergey/DATA1/NEST/shop/server/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/public/locales/ua" />
+      <recent name="$PROJECT_DIR$/server/src/static/images" />
+      <recent name="$PROJECT_DIR$/client/src/elements" />
+      <recent name="$PROJECT_DIR$/server/src" />
+      <recent name="$PROJECT_DIR$/server" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/public" />
+      <recent name="$PROJECT_DIR$/client/src" />
+      <recent name="$PROJECT_DIR$/client/src/elements/loaders" />
+      <recent name="$PROJECT_DIR$/client/src/pages" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6e8fd99a-f359-4e68-af4a-1945d82eee4f" name="Changes" comment="" />
+      <created>1690716914024</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1690716914024</updated>
+      <workItem from="1690716915365" duration="42655000" />
+      <workItem from="1691002018210" duration="14667000" />
+      <workItem from="1691096900147" duration="449000" />
+      <workItem from="1691097383834" duration="33115000" />
+      <workItem from="1691312633234" duration="11322000" />
+      <workItem from="1691344743787" duration="10253000" />
+      <workItem from="1691359707143" duration="774000" />
+      <workItem from="1691360900890" duration="1285000" />
+      <workItem from="1691438134513" duration="56019000" />
+      <workItem from="1691834853505" duration="5291000" />
+      <workItem from="1691840691731" duration="8204000" />
+      <workItem from="1691867540448" duration="10236000" />
+      <workItem from="1691990349476" duration="504000" />
+      <workItem from="1692036666304" duration="12399000" />
+      <workItem from="1692162041512" duration="16653000" />
+      <workItem from="1692302719991" duration="6710000" />
+      <workItem from="1692390620436" duration="1294000" />
+      <workItem from="1692391929639" duration="1096000" />
+      <workItem from="1692442010212" duration="9038000" />
+      <workItem from="1692520337508" duration="629000" />
+      <workItem from="1692551804967" duration="17721000" />
+      <workItem from="1692652658475" duration="838000" />
+      <workItem from="1692653548191" duration="1634000" />
+      <workItem from="1692655200751" duration="48000" />
+      <workItem from="1692655265942" duration="2150000" />
+      <workItem from="1692738885151" duration="717000" />
+      <workItem from="1692739626012" duration="808000" />
+      <workItem from="1692740448411" duration="68000" />
+      <workItem from="1692740531323" duration="20218000" />
+      <workItem from="1693078619527" duration="24230000" />
+      <workItem from="1693249263904" duration="8764000" />
+      <workItem from="1693258904089" duration="4591000" />
+      <workItem from="1693340877663" duration="841000" />
+      <workItem from="1693344319060" duration="832000" />
+      <workItem from="1693345168025" duration="1571000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

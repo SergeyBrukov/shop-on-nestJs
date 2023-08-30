@@ -11,6 +11,7 @@
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.10);
 
   .logo {
+    cursor: pointer;
     svg {
       font-size: 40px;
     }
@@ -21,6 +22,24 @@
   }
 
   .basket {
+    position: relative;
+    cursor: pointer;
+
+    .basketCount {
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #FFCF62;
+      border-radius: 50%;
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 12px;
+    }
+
     svg {
       font-size: 30px;
     }

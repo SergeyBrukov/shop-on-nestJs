@@ -11,23 +11,29 @@ datasource db {
 }
 
 model User {
-  id       Int    @id @default(autoincrement())
-  email    String @unique
+  id       Int      @id @default(autoincrement())
+  email    String   @unique
   name     String
   password String
+  basket   Basket   @relation(fields: [basketId], references: [id])
+  Orders   Orders[]
+  basketId Int      @unique
 }
 
 model Product {
-  id         Int      @id @default(autoincrement())
-  name       String   @unique
-  bestseller Boolean  @default(false)
-  new        Boolean  @default(false)
-  articul    String   @unique
-  price      String
-  producer   Producer @relation(fields: [producerId], references: [id])
-  producerId Int
-  image      Files[]
-  categories Int
+  id            Int             @id @default(autoincrement())
+  name          String          @unique
+  bestseller    Boolean         @default(false)
+  new           Boolean         @default(false)
+  articul       String          @unique
+  price         String
+  producer      Producer        @relation(fields: [producerId], references: [id])
+  producerId    Int
+  image         Files[]
+  category      Category        @relation(fields: [categoryId], references: [id])
+  categoryId    Int
+  basketProduct BasketProduct[]
+  orderProducts OrderProduct[]
 }
 
 model Producer {
@@ -48,6 +54,39 @@ model Files {
 }
 
 model Category {
-  id   Int    @id @default(autoincrement())
-  name String @unique
+  id      Int       @id @default(autoincrement())
+  name    String    @unique
+  Product Product[]
+}
+
+model Orders {
+  id            Int            @id @default(autoincrement())
+  User          User?          @relation(fields: [userId], references: [id])
+  userId        Int?
+  orderProducts OrderProduct[]
+  orderPrice    Int            @default(0)
+}
+
+model OrderProduct {
+  id        Int      @id @default(autoincrement())
+  orders    Orders?  @relation(fields: [ordersId], references: [id])
+  ordersId  Int?
+  product   Product? @relation(fields: [productId], references: [id])
+  productId Int?
+  count     Int      @default(1)
+}
+
+model Basket {
+  id       Int             @id @default(autoincrement())
+  products BasketProduct[]
+  User     User?
+}
+
+model BasketProduct {
+  id        Int     @id @default(autoincrement())
+  basket    Basket  @relation(fields: [basketId], references: [id])
+  basketId  Int
+  product   Product @relation(fields: [productId], references: [id])
+  productId Int
+  count     Int     @default(1)
 }

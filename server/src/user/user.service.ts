@@ -42,7 +42,18 @@ export class UserService {
     const newUser = await this.prismaService.user.create({
       data: {
         ...userData,
-        password: hashPassword
+        password: hashPassword,
+        basket: {
+          create: {}
+        }
+      },
+      include: {
+        basket: {
+          select: {
+            id: true,
+            products: true
+          }
+        }
       }
     });
 
@@ -57,11 +68,11 @@ export class UserService {
 
     await this.mailingService.sendEmail(to, subject, template, context);
 
-    delete userData.password;
+    delete newUser.password;
 
     return {
       id: newUser.id,
-      ...userData
+      ...newUser
     };
   }
 
@@ -91,7 +102,13 @@ export class UserService {
         id: true,
         name: true,
         email: true,
-        password: true
+        password: true,
+        basket: {
+          select: {
+            id: true,
+            products: true
+          }
+        }
       }
     });
   }

@@ -9,6 +9,9 @@ import { ProducerModule } from './producer/producer.module';
 import { FilesService } from './files/files.service';
 import { CategoryModule } from './category/category.module';
 import { ProductModule } from './product/product.module';
+import { BasketModule } from './basket/basket.module';
+import { OrdersModule } from './orders/orders.module';
+import { BasketProductModule } from './basket-product/basket-product.module';
 import configuration from "./configuration";
 
 @Module({
@@ -22,7 +25,10 @@ import configuration from "./configuration";
     TokenModule,
     ProducerModule,
     CategoryModule,
-    ProductModule
+    ProductModule,
+    BasketModule,
+    OrdersModule,
+    BasketProductModule
   ],
   controllers: [],
   providers: [PrismaService, JwtStrategy, FilesService]

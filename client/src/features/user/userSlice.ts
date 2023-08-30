@@ -1,12 +1,13 @@
-import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {RegisterInterface} from "../../utils/interface/registerInterface";
-import {TResponseUserData, TUser} from "../../utils/type/userType";
+import {TResponseBasketAddProduct, TResponseUserData, TUser} from "../../utils/type/userType";
 import axios from "axios";
 import {LoginInterface} from "../../utils/interface/loginInterface";
 import {operationWithLocalStorage} from "../../utils/customFunk/operationWithLocalStorage";
 import {ETypeOperationWithLocalStorage, TypeToastify} from "../../utils/enums/enums";
 import {GoogleAuthInterface} from "../../utils/interface/googleAuthInterface";
 import {notify} from "../../elements/toastify/toastify";
+import {removeBasketProductItem} from "../basket/basketSlice";
 
 interface IInitialState {
   loading: boolean
@@ -93,6 +94,49 @@ export const handleProfileApi = createAsyncThunk<Omit<TResponseUserData, "token"
   }
 );
 
+/*BASKET*/
+
+export const handleAddProductInUserBasket = createAsyncThunk<TResponseBasketAddProduct, number>(
+  "userSlice/handleAddProductInUserBasket",
+  async (productId, thunkAPI: any) => {
+    try {
+      await axios.post("/basket-product", {productId}, {
+        headers: {
+          authorization: `Bearer ${thunkAPI.getState().userSlice.token}`
+        }
+      });
+      return {
+        productId
+      };
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err);
+    }
+  }
+);
+
+
+export const handleRemoveProductFromUserBasket = createAsyncThunk<TResponseBasketAddProduct, number>(
+  "userSlice/handleRemoveProductFromUserBasket",
+  async (productId, thunkAPI: any) => {
+    try {
+      await axios.delete(`/basket-product/${productId}`, {
+        headers: {
+          authorization: `Bearer ${thunkAPI.getState().userSlice.token}`
+        }
+      });
+
+      thunkAPI.dispatch(removeBasketProductItem({productId}));
+
+      return {
+        productId
+      };
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err);
+    }
+  }
+);
+
+
 const userSlice = createSlice({
   name: "userSlice",
   initialState,
@@ -101,6 +145,29 @@ const userSlice = createSlice({
       operationWithLocalStorage("token", ETypeOperationWithLocalStorage.remove);
       state.user = null;
       state.token = null;
+    },
+    handleAddProductInToUserBasketReducer: (state, action) => {
+      state.user?.basket.products.push({productId: action.payload.productId, count: 1});
+    },
+    handleRemoveProductFromUserBasketReducer: (state, action) => {
+      state.user = {
+        ...state.user,
+        basket: {
+          ...state.user?.basket,
+          //@ts-ignore
+          products: state.user?.basket.products.filter(item => item.productId !== action.payload.productId)
+        }
+      };
+    },
+    zeroingBasketProduct: (state) => {
+      // @ts-ignore
+      state.user = {
+        ...state.user,
+        basket: {
+          ...state.user?.basket,
+          products: []
+        }
+      };
     }
   },
 
@@ -112,7 +179,6 @@ const userSlice = createSlice({
       })
       .addCase(handleGoogleAuth.fulfilled, (state, action) => {
         state.loading = false;
-
         state.user = action.payload.user;
         state.token = action.payload.token;
 
@@ -120,7 +186,7 @@ const userSlice = createSlice({
       })
       .addCase(handleGoogleAuth.rejected, (state, action: any) => {
         state.loading = false;
-        notify(action.payload.response.data.message, TypeToastify.ERROR)
+        notify(action.payload.response.data.message, TypeToastify.ERROR);
       })
 
       /*Register user*/
@@ -137,7 +203,7 @@ const userSlice = createSlice({
       })
       .addCase(handleRegisterApi.rejected, (state, action: any) => {
         state.loading = false;
-        notify(action.payload.response.data.message, TypeToastify.ERROR)
+        notify(action.payload.response.data.message, TypeToastify.ERROR);
       })
 
       /*Login user*/
@@ -154,7 +220,7 @@ const userSlice = createSlice({
       })
       .addCase(handleLoginApi.rejected, (state, action: any) => {
         state.loading = false;
-        notify(action.payload.response.data.message, TypeToastify.ERROR)
+        notify(action.payload.response.data.message, TypeToastify.ERROR);
       })
 
       /*Profile user*/
@@ -164,10 +230,30 @@ const userSlice = createSlice({
         state.user = action.payload.user;
       })
       .addCase(handleProfileApi.rejected, (state, action: any) => {
-        notify(action.payload.response.data.message, TypeToastify.ERROR)
+        notify(action.payload.response.data.message, TypeToastify.ERROR);
+      })
+
+      /*User basket*/
+      .addCase(handleAddProductInUserBasket.pending, (state) => {
+      })
+      .addCase(handleAddProductInUserBasket.fulfilled, (state, action: PayloadAction<TResponseBasketAddProduct>) => {
+        userSlice.caseReducers.handleAddProductInToUserBasketReducer(state, action);
+      })
+      .addCase(handleAddProductInUserBasket.rejected, (state, action: any) => {
+        notify(action.payload.response.data.message, TypeToastify.ERROR);
+      })
+
+      /*Delete product from user basket*/
+      .addCase(handleRemoveProductFromUserBasket.pending, (state) => {
+      })
+      .addCase(handleRemoveProductFromUserBasket.fulfilled, (state, action: PayloadAction<TResponseBasketAddProduct>) => {
+        userSlice.caseReducers.handleRemoveProductFromUserBasketReducer(state, action);
+      })
+      .addCase(handleRemoveProductFromUserBasket.rejected, (state, action: any) => {
+        notify(action.payload.response.data.message, TypeToastify.ERROR);
       });
   }
 });
 
-export const {handleLogout} = userSlice.actions;
+export const {handleLogout, zeroingBasketProduct} = userSlice.actions;
 export default userSlice.reducer;

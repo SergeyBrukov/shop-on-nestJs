@@ -2,15 +2,15 @@ import {
   Body,
   Controller,
   Delete,
-  Get, Param,
+  Get,
+  Param,
   Post,
-  Query,
   UploadedFile,
   UseGuards,
   UseInterceptors,
   UsePipes
 } from "@nestjs/common";
-import {ApiBearerAuth, ApiBody, ApiConsumes, ApiParam, ApiQuery, ApiTags} from "@nestjs/swagger";
+import {ApiBearerAuth, ApiBody, ApiConsumes, ApiTags} from "@nestjs/swagger";
 import {ProducerService} from "./producer.service";
 import {JwtAuthGuard} from "../guard/jwt-auth.guard";
 import {FileInterceptor} from "@nestjs/platform-express";
@@ -42,7 +42,6 @@ export class ProducerController {
   @ApiBody({
     type: CreateProducerDto
   })
-
   createProducer(@Body() data: Omit<CreateProducerDto, "image">, @UploadedFile() image: Express.Multer.File) {
     return this.producerService.createProducer(image, data.name);
   }
@@ -54,11 +53,10 @@ export class ProducerController {
     return this.producerService.getProducers();
   }
 
-
   @Delete(":id")
   @UseGuards(JwtAuthGuard)
   @ApiBearerAuth()
   deleteProducer(@Param("id") producerName: string) {
-    return this.producerService.deleteProducer(producerName)
+    return this.producerService.deleteProducer(producerName);
   }
 }

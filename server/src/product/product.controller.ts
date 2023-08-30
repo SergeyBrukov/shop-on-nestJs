@@ -36,7 +36,6 @@ export class ProductController {
   })
   @ApiConsumes("multipart/form-data")
   create(@Body() createProductDto: CreateProductDto, @UploadedFiles() images: Express.Multer.File[]) {
-
     return this.productService.createProduct(createProductDto, images);
   }
 
@@ -48,8 +47,10 @@ export class ProductController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.productService.findOne(+id);
+  @UseGuards(JwtAuthGuard)
+  @ApiBearerAuth()
+  findOneProduct(@Param('id') id: string) {
+    return this.productService.findOneProduct(+id);
   }
 
   @Patch(':id')

@@ -1,0 +1,45 @@
+.basketProductItemWrapper {
+  padding: 24px 0;
+  display: grid;
+  grid-template-columns: max(80px) 1fr 90px minmax(100px, 1fr) 50px;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid #E1E1E1;
+
+  img {
+    width: 80px;
+    border-radius: 4px;
+    object-fit: cover;
+  }
+
+  .countBlock {
+    display: inline-flex;
+    padding: 4px;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 16px;
+    border-radius: 4px;
+    border: 1px solid #66B1F1;
+    span {
+      cursor: pointer;
+      user-select: none;
+    }
+  }
+
+  h3 {
+    text-align: center;
+  }
+
+  .actionDelete {
+    color: #9E9E9E;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    text-decoration: underline;
+    cursor: pointer;
+    user-select: none;
+    &:hover {
+      color: #d52b2b;
+    }
+  }
+}

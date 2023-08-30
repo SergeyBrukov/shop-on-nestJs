@@ -23,19 +23,13 @@ export class ProducerService {
 
     this.filesService.generateFileNameAndPath(image);
 
-    const newFiles = await this.prismaService.files.create({
-      data: {
-        fileName: image.filename,
-        filePath: image.path
-      }
-    });
-
     const newProducer = await this.prismaService.producer.create({
       data: {
         name: producerName,
         image: {
-          connect: {
-            id: newFiles.id
+          create: {
+            fileName: image.filename,
+            filePath: image.path
           }
         }
       }

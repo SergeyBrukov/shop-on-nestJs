@@ -31,5 +31,5 @@ export class CreateProductDto {
 
   @ApiProperty()
   // @IsNumber()
-  categories: number;
+  category: number;
 }

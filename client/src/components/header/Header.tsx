@@ -11,13 +11,22 @@ import LanguageSelect from "./languagerSelect/LanguageSelect";
 import ThemeBtn from "../../elements/themeBtn/ThemeBtn";
 import MainSearchInput from "../../elements/input/MainSearchInput";
 import {BsBasketFill} from "react-icons/bs";
+import {useNavigate} from "react-router-dom";
+import {useAppSelector} from "../../app/hooks";
 
 const Header = () => {
+
+  const navigate = useNavigate();
+
+  const basketUser = useAppSelector(store => store.userSlice.user?.basket.products);
 
   const {t} = useTranslation(["header", "navigate"]);
 
   const [openSideBar, setOpenSideBar] = useState(false);
 
+  const redirectOnBasketPage = () => {
+    navigate("/basket");
+  };
 
   return (
     <header>
@@ -31,7 +40,7 @@ const Header = () => {
       </div>
       <div className={styles.subHeaderWrapper}>
         <MainContainer className={styles.subHeaderContainer}>
-          <div className={styles.logo}>
+          <div className={styles.logo} onClick={() => navigate("/")}>
             <GiReactor />
           </div>
           <div className={styles.searchInput}>
@@ -39,8 +48,9 @@ const Header = () => {
           </div>
           <LanguageSelect />
           <ThemeBtn />
-          <div className={styles.basket}>
+          <div className={styles.basket} onClick={redirectOnBasketPage}>
             <BsBasketFill />
+            {basketUser && <span className={styles.basketCount}>{basketUser.length}</span>}
           </div>
         </MainContainer>
       </div>

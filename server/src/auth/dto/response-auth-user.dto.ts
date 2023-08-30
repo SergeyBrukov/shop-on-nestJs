@@ -18,4 +18,7 @@ export class ResponseAuthUserDto {
     @ApiProperty()
     @IsString()
     token: string;
+
+    @ApiProperty()
+    basket: any
 }

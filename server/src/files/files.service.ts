@@ -15,19 +15,18 @@ export class FilesService {
   public generateFileNameAndPath(file: Express.Multer.File) {
     const fileExtName = file.originalname.split(".").pop();
 
-    file.filename = `${generatedId()}.${fileExtName}`
-    file.path = `uploads/${file.filename}`
+    file.filename = `${generatedId()}.${fileExtName}`;
+    file.path = `uploads/${file.filename}`;
 
-    return file
+    return file;
   }
 
   public async saveFileInDirectory(file: Express.Multer.File) {
-    const filePath = path.join(__dirname,  "../../uploads", file.filename);
+    const filePath = path.join(__dirname, "../../uploads", file.filename);
 
-   await fsPromise.writeFile(filePath, file.buffer);
+    await fsPromise.writeFile(filePath, file.buffer);
 
   }
-
 
   public async deleteFilesByDirectory(filePath: string) {
     const absolutePath = path.join(__dirname, "../../uploads", filePath);
